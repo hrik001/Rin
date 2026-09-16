@@ -7,11 +7,11 @@ interface BrandIntroSectionProps {
 
 export const BrandIntroSection: React.FC<BrandIntroSectionProps> = ({ onNavigate }) => {
   return (
-    <section id="brand-intro-section" className="py-16 sm:py-20 bg-[#F3ECE1] border-b border-[#E7DFD4]">
+    <section id="brand-intro-section" className="py-16 sm:py-20 bg-[#F3ECE1] border-b border-[#E6DDD2]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl space-y-4">
-          <span className="text-eyebrow text-[#8C2223]">
-            Our Story & Craft
+          <span className="text-eyebrow text-[#B42318]">
+            Our Story &amp; Craft
           </span>
 
           <h2 className="text-h2 text-[#1C1611]">
@@ -25,9 +25,9 @@ export const BrandIntroSection: React.FC<BrandIntroSectionProps> = ({ onNavigate
 
         {/* 3 Grounded Pillars */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          <div className="bg-white p-6 rounded-xl border border-[#E7DFD4]">
-            <span className="text-xs font-semibold text-[#8C2223] uppercase tracking-wider block mb-2">
-              01 · The Seasoning
+          <div className="bg-white p-6 rounded-xl border border-[#E6DDD2] hover:border-[#B42318]/50 transition-colors">
+            <span className="text-xs font-semibold text-[#B42318] uppercase tracking-wider block mb-2">
+              The Seasoning
             </span>
             <h3 className="text-base font-bold text-[#1C1611] mb-2">
               Clean Himalayan Seasoning
@@ -37,21 +37,21 @@ export const BrandIntroSection: React.FC<BrandIntroSectionProps> = ({ onNavigate
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-[#E7DFD4]">
-            <span className="text-xs font-semibold text-[#8C2223] uppercase tracking-wider block mb-2">
-              02 · The Technique
+          <div className="bg-white p-6 rounded-xl border border-[#E6DDD2] hover:border-[#B42318]/50 transition-colors">
+            <span className="text-xs font-semibold text-[#B42318] uppercase tracking-wider block mb-2">
+              The Technique
             </span>
             <h3 className="text-base font-bold text-[#1C1611] mb-2">
-              Rolled Thin & Bamboo Steamed
+              Rolled Thin &amp; Bamboo Steamed
             </h3>
             <p className="text-body-sm text-[#66584C]">
               Every wrapper is rolled individually with small wooden pins to ensure thin edges and no gummy joints. Multi-tiered bamboo baskets allow steam to circulate gently.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-[#E7DFD4]">
-            <span className="text-xs font-semibold text-[#8C2223] uppercase tracking-wider block mb-2">
-              03 · The City
+          <div className="bg-white p-6 rounded-xl border border-[#E6DDD2] hover:border-[#B42318]/50 transition-colors">
+            <span className="text-xs font-semibold text-[#B42318] uppercase tracking-wider block mb-2">
+              The City
             </span>
             <h3 className="text-base font-bold text-[#1C1611] mb-2">
               Rooted in Kolkata
@@ -62,13 +62,12 @@ export const BrandIntroSection: React.FC<BrandIntroSectionProps> = ({ onNavigate
           </div>
         </div>
 
-        {/* Story discovery link */}
-        <div className="mt-8">
+        <div className="mt-8 flex items-center justify-start">
           <button
             onClick={() => onNavigate('story')}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#8C2223] hover:underline cursor-pointer"
+            className="text-xs font-semibold text-[#B42318] hover:text-[#8F1D18] hover:underline flex items-center gap-1 cursor-pointer"
           >
-            <span>Read Rinchen&apos;s story from Sikkim to Kolkata</span>
+            <span>Read how Rinchen brought Himalayan dumplings to Kolkata</span>
             <span>→</span>
           </button>
         </div>

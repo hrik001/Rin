@@ -3,10 +3,28 @@
 @layer base {
   :root {
     --font-brand: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Design Tokens */
+    --color-bg: #FAF7F2;
+    --color-text: #1C1611;
+    --color-text-warm: #66584C;
+    --color-text-muted: #8B7C6E;
+    --color-red: #B42318;
+    --color-red-deep: #8F1D18;
+    --color-red-tint: #F8E8E5;
+    --color-surface: #F3ECE1;
+    --color-border: #E6DDD2;
+    --color-dark: #1C1611;
+    --color-dark-surface: #251F1A;
   }
 
   * {
     font-family: var(--font-brand);
+  }
+
+  html {
+    background-color: #FAF7F2;
+    color: #1C1611;
   }
 
   body {
@@ -15,7 +33,7 @@
     color: #1C1611;
     font-weight: 400;
     line-height: 1.6;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.012em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -23,42 +41,42 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-brand);
     letter-spacing: -0.025em;
-    line-height: 1.1;
+    color: #1C1611;
   }
 }
 
-/* Fluid responsive typography utilities using Lexend */
+/* Lexend Fluid Responsive Typography Scale */
 .text-display {
-  font-size: clamp(2.5rem, 5vw + 1rem, 4.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.6rem, 5.2vw + 1rem, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
   font-weight: 800;
 }
 
 .text-h1 {
-  font-size: clamp(2.15rem, 4vw + 0.5rem, 3.25rem);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  font-size: clamp(2.25rem, 4.2vw + 0.5rem, 3.65rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
   font-weight: 750;
 }
 
 .text-h2 {
-  font-size: clamp(1.75rem, 2.75vw + 0.5rem, 2.5rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.8rem, 2.8vw + 0.5rem, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   font-weight: 700;
 }
 
 .text-h3 {
-  font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem);
-  line-height: 1.2;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.3rem, 1.5vw + 0.5rem, 1.85rem);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
   font-weight: 650;
 }
 
 .text-body-lg {
-  font-size: clamp(1.05rem, 0.5vw + 0.95rem, 1.2rem);
-  line-height: 1.65;
+  font-size: clamp(1.05rem, 0.45vw + 0.95rem, 1.25rem);
+  line-height: 1.62;
   font-weight: 400;
 }
 
@@ -70,7 +88,7 @@
 
 .text-body-sm {
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.52;
   font-weight: 400;
 }
 
@@ -82,51 +100,70 @@
   text-transform: uppercase;
 }
 
-/* Compatibility classes mapping to Lexend */
-.font-serif-heading,
-.font-sans-body,
-.font-mono-meta {
-  font-family: var(--font-brand) !important;
-}
-
-/* Restrained Brand Colors */
+/* Semantic Brand Color Utilities */
 .bg-cream {
   background-color: #FAF7F2;
 }
 
-.bg-warm-sand {
+.bg-warm-surface {
   background-color: #F3ECE1;
 }
 
-.bg-dark-charcoal {
-  background-color: #1C1611;
+.bg-brand-red {
+  background-color: #B42318;
 }
 
-.bg-earth-red {
-  background-color: #8C2223;
+.bg-brand-red-deep {
+  background-color: #8F1D18;
 }
 
-.text-earth-red {
-  color: #8C2223;
+.bg-brand-red-tint {
+  background-color: #F8E8E5;
 }
 
-.bg-himalayan-yellow {
-  background-color: #F5C842;
+.text-brand-red {
+  color: #B42318;
 }
 
-.text-himalayan-yellow {
-  color: #E6B528;
+.text-brand-red-deep {
+  color: #8F1D18;
+}
+
+.text-warm {
+  color: #66584C;
+}
+
+.text-muted {
+  color: #8B7C6E;
 }
 
 .border-warm {
-  border-color: #E7DFD4;
+  border-color: #E6DDD2;
 }
 
-/* Container limits */
+.border-brand-red {
+  border-color: #B42318;
+}
+
+.bg-dark {
+  background-color: #1C1611;
+}
+
+.bg-dark-surface {
+  background-color: #251F1A;
+}
+
+/* Line length limits for reading comfort */
 .content-readable {
-  max-width: 68ch;
+  max-width: 65ch;
 }
 
 .editorial-readable {
   max-width: 72ch;
+}
+
+/* Smooth Focus & Transitions */
+:focus-visible {
+  outline: 2px solid #B42318;
+  outline-offset: 2px;
 }

@@ -12,72 +12,73 @@ export const CraftAndHeritageSection: React.FC<CraftAndHeritageSectionProps> = (
       tag: "Hand-Rolled",
       title: "Translucent Wrappers",
       desc: "Every wrapper is rolled individually with small wooden rolling pins. Thin edges allow the dough to pleat neatly without thick, gummy joints, ensuring a delicate bite that yields immediately to the filling.",
-      icon: Layers
+      icon: Layers,
     },
     {
       tag: "Sikkimese Hearth",
       title: "Clean Himalayan Seasoning",
       desc: "We avoid heavy store-bought spice mixes. The fillings are seasoned the traditional way: finely chopped ginger, mountain scallions, fresh coriander, pure butter, and coarse black pepper.",
-      icon: Utensils
+      icon: Utensils,
     },
     {
       tag: "Traditional Woven",
       title: "Tiered Bamboo Steaming",
       desc: "Momos are steamed in multi-tiered woven bamboo baskets. Natural bamboo allows steam to circulate and escape gently without dripping moisture back onto the dumplings, keeping wrappers firm and glossy.",
-      icon: Timer
+      icon: Timer,
     },
     {
       tag: "Stone-Ground",
       title: "Fire-Roasted Sesame Achar",
       desc: "Our iconic dip is crafted by blistering whole ripe tomatoes over open flames, stone-grinding them with toasted white sesame seeds, garlic cloves, and fresh Himalayan green chilies into a rich, smoky chutney.",
-      icon: Flame
-    }
+      icon: Flame,
+    },
   ];
 
   return (
-    <section id="craft-heritage-section" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#E8DFD3]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl space-y-3 mb-12 sm:mb-16">
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-[#8C2223]">
-            Culinary Craft & Heritage
+    <section id="craft-heritage-section" className="py-16 sm:py-20 bg-[#FAF7F2] border-b border-[#E6DDD2]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl space-y-3 mb-12">
+          <span className="text-eyebrow text-[#B42318]">
+            Culinary Craft &amp; Heritage
           </span>
-          <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1C1611]">
+          <h2 className="text-h2 text-[#1C1611]">
             Why Our Momos Taste Different
           </h2>
-          <p className="text-base text-[#66584C] font-sans-body leading-relaxed">
-            In Kolkata, momos are everywhere. But making dumplings that taste like a crisp morning in Gangtok
+          <p className="text-body text-[#66584C] leading-relaxed">
+            In Kolkata, momos are everywhere. But making dumplings that taste like a crisp morning in Sikkim
             requires unhurried technique, natural ingredients, and respecting the craft at every single fold.
           </p>
         </div>
 
         {/* 4 Craft Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={idx}
-                className="p-6 rounded-xl bg-white border border-[#E8DFD3] shadow-xs flex flex-col justify-between space-y-4 hover:border-[#8C2223]/50 transition-all group"
+                className="p-6 rounded-xl bg-white border border-[#E6DDD2] flex flex-col justify-between space-y-4 hover:border-[#B42318]/50 transition-all duration-200 group"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-semibold text-[#8C2223] px-2.5 py-1 rounded bg-[#8C2223]/8">
-                      {pillar.tag}
-                    </span>
-                    <Icon className="w-4 h-4 text-[#66584C] group-hover:text-[#8C2223] transition-colors" />
+                  <div className="w-10 h-10 rounded-lg bg-[#F8E8E5] flex items-center justify-center text-[#B42318] group-hover:bg-[#B42318] group-hover:text-white transition-colors">
+                    <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="font-serif-heading font-bold text-lg text-[#1C1611] leading-snug">
+                  <span className="text-[11px] font-semibold text-[#B42318] uppercase tracking-wider block">
+                    {pillar.tag}
+                  </span>
+
+                  <h3 className="text-base font-bold text-[#1C1611]">
                     {pillar.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#66584C] leading-relaxed">
+                  <p className="text-xs text-[#66584C] leading-relaxed">
                     {pillar.desc}
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-[#E8DFD3]/60 text-[11px] font-mono text-[#8C2223] font-medium">
-                  Fresh Batch Daily
+                <div className="pt-3 border-t border-[#E6DDD2] text-[11px] text-[#8B7C6E] flex items-center gap-1 font-medium">
+                  <span>Traditional Method</span>
                 </div>
               </div>
             );

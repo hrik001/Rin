@@ -1,14 +1,22 @@
 import { MenuItem, Outlet, PressMention, StoryMilestone, SocialPost } from '../types';
 
+export const SOCIAL_LINKS = {
+  whatsapp: "https://wa.me/919147128988?text=Hello%20Rinchen's%20Momo%2C%20I'd%20like%20to%20know%20more%20about%20your%20menu%20and%20outlets.",
+  instagram: "https://www.instagram.com/rinchen_momo/",
+  facebook: "https://www.facebook.com/rinchenmomo",
+};
+
 export const BRAND_INFO = {
   name: "Rinchen's Momo",
-  tagline: "Handmade momos. Big Himalayan soul.",
+  tagline: "Hand-folded momos, Himalayan comfort, and a table in Kolkata.",
   founder: "Rinchen Wangdi Bhutia",
   establishedYear: "2023",
   hometown: "Sikkim, India",
   flagshipLocation: "Lake Market (Behind Lake Mall), Kolkata",
   instagramHandle: "@rinchen_momo",
-  instagramUrl: "https://www.instagram.com/rinchen_momo/",
+  instagramUrl: SOCIAL_LINKS.instagram,
+  whatsappUrl: SOCIAL_LINKS.whatsapp,
+  facebookUrl: SOCIAL_LINKS.facebook,
   communityStats: "Serving Kolkata from Lake Market & Entally",
   philosophy: "Authentic Himalayan, Sikkimese and Tibetan food craft brought to Kolkata with patience, hand-folded wrappers, and unhurried hospitality.",
   storyLead: "What began as a one-man home kitchen in late 2023, where Rinchen steamed momos and shared honest cooking vlogs on Instagram, grew through Kolkata's genuine love for handmade food.",

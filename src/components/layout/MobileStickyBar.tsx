@@ -16,8 +16,8 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ currentPage, o
       {/* Streamlined Sticky Bottom Bar */}
       <aside
         id="mobile-bottom-bar"
-        aria-label="Mobile quick actions"
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#1C1611]/95 backdrop-blur-md border-t border-[#2E241C] px-4 py-2 shadow-lg"
+        aria-label="Mobile quick navigation"
+        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#1C1611]/95 backdrop-blur-md border-t border-[#2E241C] px-3 py-2 shadow-lg"
       >
         <div className="grid grid-cols-3 gap-2 text-center max-w-sm mx-auto">
           <button
@@ -26,13 +26,13 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ currentPage, o
               onNavigate('menu');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-medium transition-colors ${
+            className={`flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-lg text-xs transition-colors min-h-[44px] ${
               currentPage === 'menu'
-                ? 'text-[#F5C842] bg-white/10 font-semibold'
-                : 'text-[#D4C7BA] hover:text-[#FAF7F2]'
+                ? 'text-white bg-[#B42318] font-semibold'
+                : 'text-[#D4C7BA] hover:text-white'
             }`}
           >
-            <UtensilsCrossed className="w-3.5 h-3.5" />
+            <UtensilsCrossed className="w-4 h-4" />
             <span>Menu</span>
           </button>
 
@@ -42,86 +42,86 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ currentPage, o
               onNavigate('locations');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-medium transition-colors ${
+            className={`flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-lg text-xs transition-colors min-h-[44px] ${
               currentPage === 'locations'
-                ? 'text-[#F5C842] bg-white/10 font-semibold'
-                : 'text-[#D4C7BA] hover:text-[#FAF7F2]'
+                ? 'text-white bg-[#B42318] font-semibold'
+                : 'text-[#D4C7BA] hover:text-white'
             }`}
           >
-            <MapPin className="w-3.5 h-3.5 text-[#F5C842]" />
+            <MapPin className="w-4 h-4" />
             <span>Find Us</span>
           </button>
 
           <button
             id="mobile-sticky-order"
             onClick={() => setShowOrderSheet(true)}
-            className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-semibold text-[#1C1611] bg-[#F5C842] active:bg-[#E8BC38] transition-colors"
+            className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-lg text-xs font-semibold text-white bg-[#8F1D18] hover:bg-[#B42318] transition-colors min-h-[44px]"
           >
-            <ShoppingBag className="w-3.5 h-3.5" />
+            <ShoppingBag className="w-4 h-4" />
             <span>Order</span>
           </button>
         </div>
       </aside>
 
-      {/* Clean Order Sheet */}
+      {/* Online Delivery Bottom Sheet */}
       {showOrderSheet && (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 p-4 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-[#FAF7F2] text-[#1C1611] rounded-2xl w-full max-w-sm p-6 shadow-xl space-y-4">
-            <div className="flex items-center justify-between border-b border-[#E7DFD4] pb-3">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-end justify-center p-4">
+          <div className="bg-[#FAF7F2] rounded-2xl max-w-md w-full p-6 space-y-4 border border-[#E6DDD2] animate-in slide-in-from-bottom-4 duration-200">
+            <div className="flex items-center justify-between pb-2 border-b border-[#E6DDD2]">
               <div>
-                <h3 className="text-base font-bold text-[#1C1611]">
-                  Order Online
-                </h3>
-                <p className="text-xs text-[#66584C]">
-                  Select your preferred delivery platform
-                </p>
+                <h3 className="text-base font-bold text-[#1C1611]">Order Online in Kolkata</h3>
+                <p className="text-xs text-[#66584C]">Fast delivery via partner delivery apps</p>
               </div>
               <button
                 onClick={() => setShowOrderSheet(false)}
-                className="p-1.5 rounded-lg hover:bg-[#F3ECE1] text-[#1C1611] transition-colors"
-                aria-label="Close"
+                className="p-1 rounded-md text-[#66584C] hover:text-[#1C1611] cursor-pointer"
+                aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="space-y-2.5">
-              <a
-                href={OUTLETS[1].zomatoUrl || OUTLETS[0].zomatoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl border border-[#E7DFD4] bg-white hover:border-[#8C2223] transition-colors"
-              >
-                <div>
-                  <p className="font-semibold text-sm text-[#1C1611]">Zomato</p>
-                  <p className="text-xs text-[#66584C]">Entally & Lake Market delivery</p>
+            <div className="space-y-3">
+              {OUTLETS.map((outlet) => (
+                <div key={outlet.id} className="p-3.5 rounded-xl border border-[#E6DDD2] bg-white space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-xs text-[#1C1611]">{outlet.name}</span>
+                    <span className="text-[10px] text-[#8B7C6E]">{outlet.timings}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {outlet.swiggyUrl && (
+                      <a
+                        href={outlet.swiggyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-center py-2 px-3 rounded-lg bg-[#F8E8E5] text-[#B42318] hover:bg-[#B42318] hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1 min-h-[44px]"
+                      >
+                        <span>Swiggy</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                    {outlet.zomatoUrl && (
+                      <a
+                        href={outlet.zomatoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-center py-2 px-3 rounded-lg bg-[#FAF7F2] border border-[#E6DDD2] text-[#1C1611] hover:border-[#B42318] hover:text-[#B42318] font-semibold text-xs transition-colors flex items-center justify-center gap-1 min-h-[44px]"
+                      >
+                        <span>Zomato</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-[#8C2223]" />
-              </a>
-
-              <a
-                href={OUTLETS[0].swiggyUrl || "https://www.swiggy.com"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 rounded-xl border border-[#E7DFD4] bg-white hover:border-[#F5C842] transition-colors"
-              >
-                <div>
-                  <p className="font-semibold text-sm text-[#1C1611]">Swiggy</p>
-                  <p className="text-xs text-[#66584C]">Central & South Kolkata dispatch</p>
-                </div>
-                <ExternalLink className="w-4 h-4 text-[#1C1611]" />
-              </a>
-
-              <button
-                onClick={() => {
-                  setShowOrderSheet(false);
-                  onNavigate('locations');
-                }}
-                className="w-full text-center py-2 text-xs font-medium text-[#8C2223] hover:underline"
-              >
-                Or visit our 35-seat Lake Market restaurant →
-              </button>
+              ))}
             </div>
+
+            <button
+              onClick={() => setShowOrderSheet(false)}
+              className="w-full py-2.5 rounded-lg border border-[#E6DDD2] text-xs font-medium text-[#66584C] hover:text-[#1C1611] transition-colors min-h-[44px]"
+            >
+              Cancel
+            </button>
           </div>
         </div>
       )}
