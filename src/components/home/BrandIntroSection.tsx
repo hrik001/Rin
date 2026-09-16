@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sparkles, Mountain, Utensils, Heart } from 'lucide-react';
 import { PageRoute } from '../../types';
 
 interface BrandIntroSectionProps {
@@ -8,75 +7,68 @@ interface BrandIntroSectionProps {
 
 export const BrandIntroSection: React.FC<BrandIntroSectionProps> = ({ onNavigate }) => {
   return (
-    <section id="brand-intro-section" className="py-16 sm:py-20 bg-[#FAF7F2] border-b border-[#E8DFD3]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F3ECE1] text-[#8C2223] text-xs font-mono font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-[#F5C842]" />
-            <span>The Rinchen Philosophy</span>
-          </div>
+    <section id="brand-intro-section" className="py-16 sm:py-20 bg-[#F3ECE1] border-b border-[#E7DFD4]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl space-y-4">
+          <span className="text-eyebrow text-[#8C2223]">
+            Our Story & Craft
+          </span>
 
-          <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1C1611]">
-            What is Rinchen&apos;s Momo?
+          <h2 className="text-h2 text-[#1C1611]">
+            Rinchen&apos;s Momo started with one kitchen, one steamer, and an obsession with handmade food.
           </h2>
 
-          <p className="text-base sm:text-lg text-[#66584C] font-sans-body leading-relaxed">
-            Rinchen&apos;s Momo is an authentic Himalayan culinary destination founded by{' '}
-            <strong className="text-[#1C1611]">Rinchen Wangdi Bhutia</strong>. Born from a quiet home
-            cloud kitchen in 2023, the brand brought Sikkim&apos;s generational momo craft to Kolkata
-            with honest ingredients, hand-rolled dough, vibrant vegetable colorings, and heartfelt storytelling.
+          <p className="text-body-lg text-[#66584C] content-readable pt-1">
+            In a city that loves momos deeply, founder <strong className="text-[#1C1611] font-semibold">Rinchen Wangdi Bhutia</strong> set out to make dumplings the way they are prepared in Himalayan homes across Sikkim—with thin translucent wrappers, clean mountain seasoning, and patience at every single fold.
           </p>
         </div>
 
-        {/* 3 Balanced Editorial Pillars */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-xl border border-[#E8DFD3] shadow-xs hover:border-[#8C2223]/40 transition-colors">
-            <div className="w-10 h-10 rounded-lg bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#8C2223] mb-4">
-              <Mountain className="w-5 h-5" />
-            </div>
-            <h3 className="font-serif-heading text-lg font-bold text-[#1C1611] mb-2">
-              Sikkimese & Himalayan Roots
+        {/* 3 Grounded Pillars */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="bg-white p-6 rounded-xl border border-[#E7DFD4]">
+            <span className="text-xs font-semibold text-[#8C2223] uppercase tracking-wider block mb-2">
+              01 · The Seasoning
+            </span>
+            <h3 className="text-base font-bold text-[#1C1611] mb-2">
+              Clean Himalayan Seasoning
             </h3>
-            <p className="text-xs sm:text-sm text-[#66584C] leading-relaxed">
-              Recipes inspired by the hills of Sikkim and Darjeeling — where dough is kneaded with care,
-              meat is seasoned with mountain ginger and spring onion, and broths are simmered slow.
+            <p className="text-body-sm text-[#66584C]">
+              Fresh mountain ginger, scallions, coriander, coarse black pepper, and butter. We let the quality of fresh meats and vegetables speak without heavy store pastes.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-[#E8DFD3] shadow-xs hover:border-[#8C2223]/40 transition-colors">
-            <div className="w-10 h-10 rounded-lg bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#8C2223] mb-4">
-              <Utensils className="w-5 h-5" />
-            </div>
-            <h3 className="font-serif-heading text-lg font-bold text-[#1C1611] mb-2">
-              Folded by Hand, Steamed Fresh
+          <div className="bg-white p-6 rounded-xl border border-[#E7DFD4]">
+            <span className="text-xs font-semibold text-[#8C2223] uppercase tracking-wider block mb-2">
+              02 · The Technique
+            </span>
+            <h3 className="text-base font-bold text-[#1C1611] mb-2">
+              Rolled Thin & Bamboo Steamed
             </h3>
-            <p className="text-xs sm:text-sm text-[#66584C] leading-relaxed">
-              No industrial machines or frozen shortcuts. Every single dumpling is rolled paper-thin,
-              hand-pleated, and steamed to order in traditional tiered bamboo baskets.
+            <p className="text-body-sm text-[#66584C]">
+              Every wrapper is rolled individually with small wooden pins to ensure thin edges and no gummy joints. Multi-tiered bamboo baskets allow steam to circulate gently.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-[#E8DFD3] shadow-xs hover:border-[#8C2223]/40 transition-colors">
-            <div className="w-10 h-10 rounded-lg bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#8C2223] mb-4">
-              <Heart className="w-5 h-5" />
-            </div>
-            <h3 className="font-serif-heading text-lg font-bold text-[#1C1611] mb-2">
-              Embraced by Kolkata
+          <div className="bg-white p-6 rounded-xl border border-[#E7DFD4]">
+            <span className="text-xs font-semibold text-[#8C2223] uppercase tracking-wider block mb-2">
+              03 · The City
+            </span>
+            <h3 className="text-base font-bold text-[#1C1611] mb-2">
+              Rooted in Kolkata
             </h3>
-            <p className="text-xs sm:text-sm text-[#66584C] leading-relaxed">
-              From giving free momos to neighbors when orders were zero to welcoming food lovers into our
-              cozy 35-seat Lake Market dining room and Entally express counter.
+            <p className="text-body-sm text-[#66584C]">
+              From steaming momos in a quiet home kitchen to serving hungry diners at our 35-seat Lake Market restaurant and Entally delivery hub.
             </p>
           </div>
         </div>
 
         {/* Story discovery link */}
-        <div className="mt-8 text-center">
+        <div className="mt-8">
           <button
             onClick={() => onNavigate('story')}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#8C2223] hover:underline cursor-pointer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#8C2223] hover:underline cursor-pointer"
           >
-            <span>Read Rinchen&apos;s full journey from Sikkim to Kolkata</span>
+            <span>Read Rinchen&apos;s story from Sikkim to Kolkata</span>
             <span>→</span>
           </button>
         </div>

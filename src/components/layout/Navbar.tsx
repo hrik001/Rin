@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu as MenuIcon, X, MapPin, ExternalLink, Instagram, Phone, UtensilsCrossed } from 'lucide-react';
+import { Menu as MenuIcon, X, MapPin, Instagram, UtensilsCrossed } from 'lucide-react';
 import { PageRoute } from '../../types';
-import { BRAND_INFO, OUTLETS } from '../../data/brand';
+import { BRAND_INFO } from '../../data/brand';
 
 interface NavbarProps {
   currentPage: PageRoute;
@@ -20,10 +20,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks: { label: string; page: PageRoute; badge?: string }[] = [
+  const navLinks: { label: string; page: PageRoute }[] = [
     { label: 'Menu', page: 'menu' },
     { label: 'Our Story', page: 'story' },
-    { label: 'Outlets', page: 'locations', badge: '2 Locations' },
+    { label: 'Locations', page: 'locations' },
     { label: 'Contact', page: 'contact' },
   ];
 
@@ -38,59 +38,52 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       id="main-navigation"
       className={`sticky top-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'bg-[#FAF7F2]/95 backdrop-blur-md shadow-xs border-b border-[#E8DFD3]'
-          : 'bg-[#FAF7F2] border-b border-[#E8DFD3]/60'
+          ? 'bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E7DFD4]'
+          : 'bg-[#FAF7F2] border-b border-[#E7DFD4]/60'
       }`}
     >
-      {/* Top micro-banner */}
-      <div className="bg-[#1C1611] text-[#FAF7F2] text-xs py-1.5 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      {/* Concise Brand Announcement Strip */}
+      <div className="bg-[#1C1611] text-[#FAF7F2] text-xs py-2 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#F5C842] animate-pulse"></span>
-            <span className="font-medium tracking-wide">
-              Lake Market Dine-In (35 Seats) & Entally Delivery Hub
+            <span className="w-2 h-2 rounded-full bg-[#F5C842]"></span>
+            <span className="font-normal text-[#FAF7F2]/90 tracking-normal text-xs sm:text-[13px]">
+              Handmade Himalayan momos in Kolkata · Lake Market Dine-In & Entally Takeaway
             </span>
           </div>
-          <div className="hidden sm:flex items-center gap-4 text-xs text-[#FAF7F2]/80">
-            <span>Open Daily: 1:30 PM – 11:00 PM</span>
-            <span className="text-[#F5C842]/40">•</span>
+          <div className="hidden md:flex items-center gap-4 text-xs text-[#FAF7F2]/80">
             <a
               href={BRAND_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#F5C842] flex items-center gap-1 transition-colors"
+              className="hover:text-[#F5C842] flex items-center gap-1.5 transition-colors font-medium"
             >
-              <Instagram className="w-3 h-3 text-[#F5C842]" />
-              <span>@rinchen_momo</span>
+              <Instagram className="w-3.5 h-3.5 text-[#F5C842]" />
+              <span>{BRAND_INFO.instagramHandle}</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Brand Logo / Wordmark */}
+      {/* Main Navigation Bar */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-18 sm:h-20">
+          {/* Brand Wordmark */}
           <button
             id="brand-logo-button"
             onClick={() => handleLinkClick('home')}
-            className="flex flex-col text-left group cursor-pointer"
+            className="flex flex-col text-left group cursor-pointer focus:outline-none"
           >
-            <div className="flex items-center gap-2">
-              <span className="font-serif-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#1C1611] group-hover:text-[#8C2223] transition-colors">
-                RINCHEN&apos;S MOMO
-              </span>
-              <span className="inline-block px-1.5 py-0.5 text-[10px] uppercase font-mono font-medium tracking-wider bg-[#F5C842] text-[#1C1611] rounded">
-                Kolkata
-              </span>
-            </div>
-            <span className="text-[11px] sm:text-xs text-[#66584C] font-mono tracking-wider uppercase">
-              Handmade Himalayan Momos · By Rinchen Wangdi
+            <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#1C1611] group-hover:text-[#8C2223] transition-colors leading-none">
+              RINCHEN&apos;S MOMO
+            </span>
+            <span className="text-[11px] text-[#66584C] font-normal tracking-wide mt-1">
+              Handmade in Kolkata · By Rinchen Wangdi Bhutia
             </span>
           </button>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Desktop Navigation">
+          {/* Desktop Center Navigation */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Desktop Navigation">
             {navLinks.map((link) => {
               const isActive = currentPage === link.page;
               return (
@@ -98,20 +91,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   key={link.page}
                   id={`nav-link-${link.page}`}
                   onClick={() => handleLinkClick(link.page)}
-                  className={`relative px-3.5 py-2 text-sm font-medium transition-all rounded-md cursor-pointer ${
+                  className={`relative py-1.5 text-sm transition-colors cursor-pointer ${
                     isActive
-                      ? 'text-[#8C2223] font-semibold bg-[#8C2223]/8'
-                      : 'text-[#2B231D] hover:text-[#8C2223] hover:bg-[#FAF7F2]'
+                      ? 'text-[#8C2223] font-semibold'
+                      : 'text-[#1C1611]/80 hover:text-[#8C2223] font-medium'
                   }`}
                 >
-                  <span className="relative z-10">{link.label}</span>
-                  {link.badge && (
-                    <span className="ml-1.5 px-1.5 py-0.2 text-[10px] font-mono rounded-full bg-[#E8DFD3] text-[#1C1611]">
-                      {link.badge}
-                    </span>
-                  )}
+                  <span>{link.label}</span>
                   {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#8C2223] rounded-full" />
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#8C2223] rounded-full" />
                   )}
                 </button>
               );
@@ -123,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             <button
               id="nav-quick-directions"
               onClick={() => handleLinkClick('locations')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-[#1C1611] border border-[#1C1611]/20 rounded-md hover:border-[#1C1611] hover:bg-white/60 transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#1C1611] border border-[#E7DFD4] bg-white rounded-lg hover:border-[#1C1611] transition-all cursor-pointer"
             >
               <MapPin className="w-3.5 h-3.5 text-[#8C2223]" />
               <span>Find Us</span>
@@ -132,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             <button
               id="nav-primary-menu-cta"
               onClick={() => handleLinkClick('menu')}
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-[#F5C842] text-[#1C1611] rounded-md shadow-xs hover:bg-[#E8BC38] transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold bg-[#F5C842] text-[#1C1611] rounded-lg hover:bg-[#E8BC38] transition-colors cursor-pointer"
             >
               <UtensilsCrossed className="w-3.5 h-3.5" />
               <span>Explore Menu</span>
@@ -144,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             <button
               id="mobile-quick-menu-btn"
               onClick={() => handleLinkClick('menu')}
-              className="px-2.5 py-1.5 text-xs font-semibold bg-[#F5C842] text-[#1C1611] rounded"
+              className="px-3 py-1.5 text-xs font-semibold bg-[#F5C842] text-[#1C1611] rounded-lg"
             >
               Menu
             </button>
@@ -152,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               id="mobile-menu-toggle-button"
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#1C1611] rounded-md hover:bg-[#E8DFD3]/40 focus:outline-hidden"
+              className="p-2 text-[#1C1611] rounded-lg hover:bg-[#F3ECE1] transition-colors focus:outline-none"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -162,20 +150,20 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div
           id="mobile-navigation-drawer"
-          className="md:hidden border-b border-[#E8DFD3] bg-[#FAF7F2] px-4 pt-2 pb-6 space-y-3 shadow-lg animate-in slide-in-from-top-2"
+          className="md:hidden border-b border-[#E7DFD4] bg-[#FAF7F2] px-5 pt-3 pb-8 space-y-4 shadow-sm"
         >
           <div className="flex flex-col space-y-1">
             <button
               id="mobile-nav-home"
               onClick={() => handleLinkClick('home')}
-              className={`text-left px-3 py-2.5 rounded-md text-base font-medium ${
+              className={`text-left px-3 py-3 rounded-lg text-base ${
                 currentPage === 'home'
-                  ? 'bg-[#8C2223]/10 text-[#8C2223] font-semibold'
-                  : 'text-[#1C1611] hover:bg-[#E8DFD3]/50'
+                  ? 'text-[#8C2223] font-semibold bg-[#8C2223]/8'
+                  : 'text-[#1C1611] font-medium hover:bg-[#F3ECE1]'
               }`}
             >
               Home
@@ -185,46 +173,41 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 key={link.page}
                 id={`mobile-nav-${link.page}`}
                 onClick={() => handleLinkClick(link.page)}
-                className={`flex items-center justify-between text-left px-3 py-2.5 rounded-md text-base font-medium ${
+                className={`text-left px-3 py-3 rounded-lg text-base ${
                   currentPage === link.page
-                    ? 'bg-[#8C2223]/10 text-[#8C2223] font-semibold'
-                    : 'text-[#1C1611] hover:bg-[#E8DFD3]/50'
+                    ? 'text-[#8C2223] font-semibold bg-[#8C2223]/8'
+                    : 'text-[#1C1611] font-medium hover:bg-[#F3ECE1]'
                 }`}
               >
-                <span>{link.label}</span>
-                {link.badge && (
-                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#F5C842] text-[#1C1611]">
-                    {link.badge}
-                  </span>
-                )}
+                {link.label}
               </button>
             ))}
           </div>
 
-          <div className="pt-3 border-t border-[#E8DFD3] space-y-2">
-            <div className="grid grid-cols-2 gap-2">
+          <div className="pt-4 border-t border-[#E7DFD4] space-y-3">
+            <div className="grid grid-cols-2 gap-3">
               <button
                 id="mobile-nav-find-outlets"
                 onClick={() => handleLinkClick('locations')}
-                className="flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[#1C1611] border border-[#1C1611]/30 rounded-md bg-white/70"
+                className="flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-[#1C1611] border border-[#E7DFD4] rounded-lg bg-white"
               >
                 <MapPin className="w-3.5 h-3.5 text-[#8C2223]" />
-                <span>Outlets</span>
+                <span>Find Us</span>
               </button>
               <a
                 id="mobile-nav-instagram"
                 href={BRAND_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[#1C1611] bg-[#F5C842] rounded-md"
+                className="flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-[#1C1611] bg-[#F5C842] rounded-lg"
               >
-                <Instagram className="w-3.5 h-3.5 text-[#8C2223]" />
+                <Instagram className="w-3.5 h-3.5" />
                 <span>Instagram</span>
               </a>
             </div>
 
-            <p className="text-[11px] text-[#66584C] text-center pt-1 font-mono">
-              Lake Market: 1:30 PM – 11:00 PM · Walk-in Dining
+            <p className="text-xs text-[#66584C] text-center pt-1 font-normal">
+              Lake Market: 1:30 PM – 11:00 PM · Entally: 12:30 PM – 10:30 PM
             </p>
           </div>
         </div>

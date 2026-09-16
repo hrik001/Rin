@@ -9,30 +9,25 @@ interface FinalCtaSectionProps {
 
 export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onNavigate }) => {
   return (
-    <section id="final-cta-section" className="py-20 sm:py-28 bg-[#1A130E] text-[#FAF7F2] relative overflow-hidden">
-      {/* Subtle warm glow background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-72 bg-[#8C2223]/25 blur-3xl pointer-events-none rounded-full" />
-      <div className="absolute top-0 right-1/4 w-72 h-72 bg-[#F5C842]/10 blur-3xl pointer-events-none rounded-full" />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-        <span className="inline-block px-3 py-1 rounded-full bg-[#FAF7F2]/10 border border-white/10 text-xs font-mono font-medium text-[#F5C842] uppercase tracking-wider">
+    <section id="final-cta-section" className="py-20 bg-[#1C1611] text-[#FAF7F2] relative">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <span className="inline-block px-3 py-1 rounded-md bg-[#2B231B] text-xs font-medium text-[#F5C842]">
           Lake Market & Entally · Kolkata
         </span>
 
-        <h2 className="font-serif-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-          Your next momo stop is in{' '}
-          <span className="text-[#F5C842] italic font-serif">Kolkata.</span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#FAF7F2]">
+          Your next momo stop is in Kolkata.
         </h2>
 
-        <p className="text-base sm:text-lg text-[#D4C7BA] max-w-2xl mx-auto leading-relaxed font-sans-body">
-          Come hungry for hand-pleated rose momos, fragrant thukpa, crisp kothey, and the warmth of genuine Himalayan hospitality.
+        <p className="text-sm sm:text-base text-[#D4C7BA] max-w-2xl mx-auto leading-relaxed">
+          Join us for hand-pleated rose momos, fragrant thukpa bowls, crisp kothey, and authentic Himalayan warmth.
         </p>
 
-        <div className="pt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
           <button
             id="final-cta-explore-menu"
             onClick={() => onNavigate('menu')}
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#F5C842] hover:bg-[#E8BC38] text-[#1A130E] font-semibold text-sm sm:text-base tracking-wide transition-colors cursor-pointer shadow-lg"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#F5C842] hover:bg-[#E8BC38] text-[#1C1611] font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
           >
             <UtensilsCrossed className="w-4 h-4" />
             <span>Explore the Menu</span>
@@ -42,7 +37,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onNavigate }) 
           <button
             id="final-cta-find-locations"
             onClick={() => onNavigate('locations')}
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#241C15] hover:bg-[#2F241C] border border-[#3A2E24] text-[#FAF7F2] font-semibold text-sm sm:text-base tracking-wide transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2B231B] hover:bg-[#382E24] text-[#FAF7F2] font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
           >
             <MapPin className="w-4 h-4 text-[#F5C842]" />
             <span>Find Our Outlets</span>
@@ -53,15 +48,15 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onNavigate }) 
             href={BRAND_INFO.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-3.5 rounded-lg text-xs font-semibold uppercase tracking-wider text-[#D4C7BA] hover:text-[#F5C842] transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-3 rounded-lg text-xs font-semibold text-[#D4C7BA] hover:text-[#FAF7F2] transition-colors"
           >
-            <Instagram className="w-4 h-4" />
+            <Instagram className="w-4 h-4 text-[#F5C842]" />
             <span>{BRAND_INFO.instagramHandle}</span>
           </a>
         </div>
 
-        <p className="text-xs text-[#9E8E81] pt-6 font-mono">
-          Lake Market Dine-in (1:30 PM – 11:00 PM) · Entally Delivery Hub · Walk-in Tables
+        <p className="text-xs text-[#9E8E81] pt-4">
+          Lake Market Dine-In (1:30 PM – 11:00 PM) · Entally Kitchen (12:30 PM – 10:30 PM) · Walk-ins welcome
         </p>
       </div>
     </section>

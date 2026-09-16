@@ -9,10 +9,10 @@ export const BRAND_INFO = {
   flagshipLocation: "Lake Market (Behind Lake Mall), Kolkata",
   instagramHandle: "@rinchen_momo",
   instagramUrl: "https://www.instagram.com/rinchen_momo/",
-  communityStats: "750K+ Community across social platforms",
-  philosophy: "Authentic Himalayan, Sikkimese and Tibetan food craft brought to the heart of Kolkata with patience, hand-folded wrappers, and unhurried hospitality.",
-  storyLead: "What began as a one-man home kitchen in 2023, where Rinchen steamed momos and shared honest cooking vlogs on Instagram, quickly grew into Kolkata's most viral momo story.",
-  roseMomoDescription: "Delicately pleated by hand to resemble blooming petals, coloured with pure beetroot and fresh spinach extracts — no artificial dyes, ever.",
+  communityStats: "Serving Kolkata from Lake Market & Entally",
+  philosophy: "Authentic Himalayan, Sikkimese and Tibetan food craft brought to Kolkata with patience, hand-folded wrappers, and unhurried hospitality.",
+  storyLead: "What began as a one-man home kitchen in late 2023, where Rinchen steamed momos and shared honest cooking vlogs on Instagram, grew through Kolkata's genuine love for handmade food.",
+  roseMomoDescription: "Delicately pleated by hand into layered rose petals, coloured naturally with boiled beetroot and fresh spinach extracts — no artificial dyes.",
   cateringEmail: "rinchenmomo.kolkata@gmail.com",
 };
 
@@ -20,16 +20,16 @@ export const OUTLETS: Outlet[] = [
   {
     id: "lake-market",
     name: "Lake Market Dine-In",
-    subtitle: "Flagship 35-Seater Restaurant",
+    subtitle: "35-Seater Restaurant",
     area: "Kalighat / Lake Market",
     address: "23A, Lake Market, Sardar Shankar Road, Kalighat (Behind Lake Mall)",
     landmark: "Behind Lake Mall, near Kalighat Metro",
     serviceType: "Dine-In Restaurant",
-    serviceSummary: "Intimate 35-seater wooden dine-in restaurant with warm mountain ambiance, fresh table service, and full specialty menu.",
-    seatingCapacity: "35 Seats",
+    serviceSummary: "Intimate 35-seat wooden dine-in restaurant with warm mountain ambiance, fresh table service, and full specialty menu.",
+    seatingCapacity: "35 Seats · Walk-In Dining",
     timings: "1:30 PM – 11:00 PM",
     daysOpen: "Every day (Mon – Sun)",
-    phone: "+91 98300 00000",
+    phone: "+91 98300 12345",
     statusBadge: "Dine-In & Takeaway",
     googleMapsUrl: "https://maps.google.com/?q=23A+Sardar+Shankar+Road+Lake+Market+Kolkata+700029",
     zomatoUrl: "https://www.zomato.com/kolkata",
@@ -37,26 +37,26 @@ export const OUTLETS: Outlet[] = [
     districtUrl: "https://www.district.in/dining/kolkata/rinchens-momo-kalighat",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
     features: [
-      "Cozy 35-seat dining room",
-      "Signature Rose Momos served hot from steamer",
-      "Full wok & noodle specialties",
-      "Takeaway & counter pickup available",
-      "Air-conditioned interior"
+      "35-seat walk-in dining room",
+      "Signature Rose Momos served fresh from the steamer",
+      "Thukpa, faley, and wok specialties",
+      "Takeaway counter pickup available",
+      "Comfortable air-conditioned space"
     ]
   },
   {
     id: "entally",
-    name: "Entally QSR & Cloud Hub",
+    name: "Entally Takeaway & Delivery",
     subtitle: "Express Counter & Online Delivery Hub",
     area: "Entally / Central Kolkata",
     address: "34, Girish Chandra Bose Road, Entally, Kolkata 700014",
     landmark: "Opposite Entally Market Gate No. 5",
-    serviceType: "Quick-Service & Cloud Kitchen",
-    serviceSummary: "The beloved original kitchen location that expanded in June 2024 into a dedicated quick-service counter and central delivery dispatch.",
-    seatingCapacity: "Takeaway & Delivery (No Seating)",
+    serviceType: "Takeaway & Delivery Hub",
+    serviceSummary: "The beloved kitchen location that expanded in 2024 into a dedicated quick-service takeaway counter and central delivery dispatch.",
+    seatingCapacity: "Takeaway & Delivery Only (No Seating)",
     timings: "12:30 PM – 10:30 PM",
     daysOpen: "Every day (Mon – Sun)",
-    phone: "+91 98300 00000",
+    phone: "+91 91471 28988",
     statusBadge: "Delivery & Takeaway Only",
     googleMapsUrl: "https://maps.google.com/?q=34+Girish+Chandra+Bose+Road+Entally+Kolkata+700014",
     zomatoUrl: "https://www.zomato.com/kolkata/rinchens-momo-entally",
@@ -65,9 +65,9 @@ export const OUTLETS: Outlet[] = [
     image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
     features: [
       "Express takeout counter",
-      "Rapid delivery packaging",
-      "Central Kolkata delivery radius",
-      "Momos, Thukpa & Wok boxes"
+      "Delivery packaging for hot transit",
+      "Central Kolkata delivery dispatch",
+      "Fresh momos, Thukpa & wok bowls"
     ]
   }
 ];
@@ -79,7 +79,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: "signature",
     categoryLabel: "Signature",
     dietary: "non-veg",
-    description: "The viral sensation folded by hand into layered rose petals. Tender chicken mince infused with mountain spices, ginger, and scallions, served with spicy sesame-tomato achar and hot herbal broth.",
+    description: "Folded by hand into delicate layered rose petals. Seasoned chicken mince with Himalayan spices, fresh ginger, and mountain scallions, served with fire-roasted sesame-tomato achar and hot broth.",
     priceNote: "Available at Lake Market & Entally",
     isSignature: true,
     isPopular: true,
@@ -102,8 +102,8 @@ export const MENU_ITEMS: MenuItem[] = [
     isRoseMomo: true,
     spiciness: 1,
     image: "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=900&q=80",
-    highlights: ["Natural Spinach & Beet Extract", "Paneer & Garden Herb filling", "100% Plant Colored"],
-    pairing: "Roasted Tomato Garlic Dip"
+    highlights: ["Natural Pure Vegetable Purees", "Cottage Cheese & Greens", "Mild Herbs"],
+    pairing: "Roasted Tomato Dip"
   },
   {
     id: "chicken-kothey-momo",
@@ -382,11 +382,11 @@ export const SOCIAL_GALLERY: SocialPost[] = [
   {
     id: "reel-1",
     title: "Behind the Rose Fold",
-    caption: "Over 2 million views watching Rinchen fold the signature Rose Momo with pure beetroot dough.",
+    caption: "Rinchen folding the signature Rose Momo with pure beetroot dough and seasoned filling.",
     type: "reel",
     image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80",
     link: "https://www.instagram.com/rinchen_momo/",
-    tag: "Viral Recipe"
+    tag: "Kitchen Craft"
   },
   {
     id: "post-2",

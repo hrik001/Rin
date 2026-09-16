@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, Instagram, Quote } from 'lucide-react';
+import { ArrowRight, Instagram } from 'lucide-react';
 import { PageRoute } from '../../types';
 import { BRAND_INFO } from '../../data/brand';
 
@@ -9,55 +9,48 @@ interface FounderStorySectionProps {
 
 export const FounderStorySection: React.FC<FounderStorySectionProps> = ({ onNavigate }) => {
   return (
-    <section id="founder-story-section" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#E8DFD3]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="founder-story-section" className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#E7DFD4]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Editorial Content (Col 7) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3ECE1] text-xs font-mono text-[#8C2223] font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-[#F5C842]" />
-              <span>Meet the Founder & Creator</span>
-            </div>
+            <span className="text-eyebrow text-[#8C2223]">
+              The Founder
+            </span>
 
-            <div className="space-y-3">
-              <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1C1611]">
+            <div className="space-y-2">
+              <h2 className="text-h2 text-[#1C1611]">
                 &ldquo;I started by steaming momos for empty tables. Kolkata taught me perseverance.&rdquo;
               </h2>
-              <p className="text-sm font-mono text-[#8C2223] font-semibold">
-                — Rinchen Wangdi Bhutia, Founder
+              <p className="text-xs font-semibold text-[#8C2223]">
+                — Rinchen Wangdi Bhutia
               </p>
             </div>
 
-            <p className="text-base text-[#66584C] font-sans-body leading-relaxed">
-              In late 2023, Rinchen left the security of a corporate desk in Kolkata to pursue what made him feel truly alive:
-              the honest, comforting Himalayan recipes he grew up with in Sikkim. In the first weeks of his small home cloud kitchen,
-              orders were virtually zero. Rather than quitting, Rinchen walked the streets offering free momos to neighbors,
-              began filming candid cooking videos showing how each wrapper was folded, and worked through the night experimenting
-              with natural beetroot and spinach colors to create the signature Rose Momo.
+            <p className="text-body text-[#66584C] content-readable">
+              In late 2023, Rinchen left corporate work in Kolkata to pursue the food of his childhood in Sikkim. During the earliest days in a modest home kitchen, orders were few and far between. Rather than giving up, Rinchen stepped out to share freshly steamed momos with neighbors, began sharing quiet videos of his hand-folding technique, and spent long nights perfecting naturally tinted vegetable wrappers.
             </p>
 
-            <p className="text-base text-[#66584C] font-sans-body leading-relaxed">
-              When his reels resonated with food lovers across India, the enthusiasm was electric. That groundswell of support
-              led to his first quick-service counter at Entally Market in June 2024, followed by a warm 35-seat dine-in restaurant
-              behind Lake Mall.
+            <p className="text-body text-[#66584C] content-readable">
+              When Kolkata discovered his dedication, the response was warm and genuine. That support allowed him to open his first counter at Entally in June 2024, followed by our 35-seat dine-in restaurant near Lake Mall.
             </p>
 
             {/* Timeline Highlights */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3 bg-white rounded-lg border border-[#E8DFD3]">
-                <p className="text-xs font-mono font-bold text-[#8C2223]">2023</p>
-                <p className="text-xs font-semibold text-[#1C1611] mt-0.5">Home Cloud Kitchen</p>
-                <p className="text-[11px] text-[#66584C]">First steamer in Kolkata</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div className="p-3.5 bg-white rounded-lg border border-[#E7DFD4]">
+                <p className="text-xs font-semibold text-[#8C2223]">2023</p>
+                <p className="text-xs font-bold text-[#1C1611] mt-0.5">Home Kitchen</p>
+                <p className="text-[11px] text-[#66584C]">First bamboo steamer</p>
               </div>
-              <div className="p-3 bg-white rounded-lg border border-[#E8DFD3]">
-                <p className="text-xs font-mono font-bold text-[#8C2223]">June 2024</p>
-                <p className="text-xs font-semibold text-[#1C1611] mt-0.5">Entally QSR</p>
-                <p className="text-[11px] text-[#66584C]">Physical counter debut</p>
+              <div className="p-3.5 bg-white rounded-lg border border-[#E7DFD4]">
+                <p className="text-xs font-semibold text-[#8C2223]">June 2024</p>
+                <p className="text-xs font-bold text-[#1C1611] mt-0.5">Entally Counter</p>
+                <p className="text-[11px] text-[#66584C]">Takeaway & delivery debut</p>
               </div>
-              <div className="p-3 bg-white rounded-lg border border-[#E8DFD3] col-span-2 sm:col-span-1">
-                <p className="text-xs font-mono font-bold text-[#8C2223]">Late 2024</p>
-                <p className="text-xs font-semibold text-[#1C1611] mt-0.5">Lake Market Dine-In</p>
-                <p className="text-[11px] text-[#66584C]">35-seater restaurant</p>
+              <div className="p-3.5 bg-white rounded-lg border border-[#E7DFD4]">
+                <p className="text-xs font-semibold text-[#8C2223]">Late 2024</p>
+                <p className="text-xs font-bold text-[#1C1611] mt-0.5">Lake Market</p>
+                <p className="text-[11px] text-[#66584C]">35-seat dine-in restaurant</p>
               </div>
             </div>
 
@@ -66,9 +59,9 @@ export const FounderStorySection: React.FC<FounderStorySectionProps> = ({ onNavi
               <button
                 id="read-full-story-btn"
                 onClick={() => onNavigate('story')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1C1611] hover:bg-[#8C2223] text-white text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1C1611] hover:bg-[#8C2223] text-white text-xs font-semibold transition-colors cursor-pointer"
               >
-                <span>Read Full Founder Story</span>
+                <span>Read Rinchen&apos;s Full Story</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -79,33 +72,25 @@ export const FounderStorySection: React.FC<FounderStorySectionProps> = ({ onNavi
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8C2223] hover:underline"
               >
                 <Instagram className="w-4 h-4" />
-                <span>Follow Rinchen&apos;s journey on Instagram</span>
+                <span>Follow {BRAND_INFO.instagramHandle}</span>
               </a>
             </div>
           </div>
 
-          {/* Visual Showcase (Col 5) */}
+          {/* Portrait (Col 5) */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-sm lg:max-w-none">
-              <div className="aspect-3/4 rounded-2xl overflow-hidden shadow-xl border border-[#E8DFD3] bg-[#241C15] relative">
+            <div className="rounded-xl overflow-hidden border border-[#E7DFD4] bg-white shadow-sm">
+              <div className="aspect-3/4 relative overflow-hidden bg-[#251E17]">
                 <img
                   src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=85"
                   alt="Founder Rinchen Wangdi Bhutia preparing fresh handmade momos"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1C1611]/90 via-transparent to-transparent" />
                 
-                <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#F5C842]">
-                    Founder & Food Creator
-                  </span>
-                  <h3 className="font-serif-heading text-2xl font-bold">
-                    Rinchen Wangdi Bhutia
-                  </h3>
-                  <p className="text-xs text-gray-300 leading-snug">
-                    Originally from Sikkim. Brought authentic generational Himalayan cooking to the heart of Kolkata.
-                  </p>
+                <div className="absolute bottom-3 left-3 right-3 bg-[#1C1611]/90 backdrop-blur-xs text-white p-3 rounded-lg">
+                  <p className="text-xs font-semibold text-[#FAF7F2]">Rinchen Wangdi Bhutia</p>
+                  <p className="text-[11px] text-[#D4C7BA]">Founder & Momo Maker · Kolkata</p>
                 </div>
               </div>
             </div>

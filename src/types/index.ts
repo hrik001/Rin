@@ -18,6 +18,7 @@ export interface MenuItem {
   categoryLabel: string;
   dietary: DietaryType;
   description: string;
+  price?: number;
   priceNote?: string;
   isSignature?: boolean;
   isPopular?: boolean;
@@ -35,7 +36,7 @@ export interface Outlet {
   area: string;
   address: string;
   landmark: string;
-  serviceType: 'Dine-In Restaurant' | 'Quick-Service & Cloud Kitchen';
+  serviceType: 'Dine-In Restaurant' | 'Quick-Service & Cloud Kitchen' | 'Takeaway & Delivery Hub';
   serviceSummary: string;
   seatingCapacity?: string;
   timings: string;
