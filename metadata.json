@@ -1,0 +1,6 @@
+{
+  "name": "Rinchen's Momo",
+  "description": "Handmade Himalayan momos, signature Rose Momos, and authentic Sikkimese culinary heritage in Kolkata by Rinchen Wangdi Bhutia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Fraunces", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "DM Mono", monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF7F2;
+    color: #1C1611;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom utility classes for editorial restaurant styling */
+.font-serif-heading {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-mono-meta {
+  font-family: "DM Mono", monospace;
+}
+
+/* Subtle pattern for Himalayan warmth */
+.bg-warm-canvas {
+  background-color: #FAF7F2;
+}
+
+.bg-warm-sand {
+  background-color: #F3ECE1;
+}
+
+.bg-dark-charcoal {
+  background-color: #1A130E;
+}
+
+.bg-earth-red {
+  background-color: #8C2223;
+}
+
+.text-earth-red {
+  color: #8C2223;
+}
+
+.text-himalayan-yellow {
+  color: #E6B528;
+}
+
+.bg-himalayan-yellow {
+  background-color: #F5C842;
+}
+
+.border-warm {
+  border-color: #E7DFD4;
+}
